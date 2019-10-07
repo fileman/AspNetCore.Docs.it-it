@@ -19,13 +19,13 @@ In questo articolo vengono evidenziate le modifiche più significative in ASP.NE
 
 ## <a name="blazor"></a>Blazor
 
-Blazer è un nuovo Framework in ASP.NET Core per la creazione di un'interfaccia utente Web interattiva sul lato client con .NET:
+Blazor è un nuovo Framework in ASP.NET Core per la creazione di un'interfaccia utente Web interattiva sul lato client con .NET:
 
 * Creare interfacce utente interattive avanzate con C# invece di JavaScript.
 * Condividere la logica dell'app scritta in .NET sul lato client e sul lato server.
 * Eseguire il rendering dell'interfaccia utente come HTML e CSS per un ampio supporto dei browser, inclusi i browser per dispositivi mobili.
 
-Scenari supportati dal Framework Blazer:
+Scenari supportati dal Framework Blazor:
 
 * Componenti dell'interfaccia utente riutilizzabili (componenti Razor)
 * Routing lato client
@@ -39,17 +39,17 @@ Per altre informazioni, vedere <xref:blazor/index>.
 
 ### <a name="blazor-server"></a>Server Blazor
 
-Blazor separa la logica di rendering dei componenti dal modo in cui vengono applicati gli aggiornamenti dell'interfaccia utente. Il server Blazer fornisce il supporto per l'hosting di componenti Razor sul server in un'app ASP.NET Core. Tutti gli aggiornamenti dell'interfaccia utente vengono gestiti tramite una connessione SignalR. Il server blazer è supportato in ASP.NET Core 3,0.
+Blazor separa la logica di rendering dei componenti dal modo in cui vengono applicati gli aggiornamenti dell'interfaccia utente. Il server Blazor fornisce il supporto per l'hosting di componenti Razor sul server in un'app ASP.NET Core. Tutti gli aggiornamenti dell'interfaccia utente vengono gestiti tramite una connessione SignalR. Il server Blazor è supportato in ASP.NET Core 3,0.
 
-### <a name="blazor-webassembly-preview"></a>Webassembly blazer (anteprima)
+### <a name="blazor-webassembly-preview"></a>Webassembly Blazor (anteprima)
 
-Le app Blazer possono anche essere eseguite direttamente nel browser usando un Runtime .NET basato su webassembly. Il webassembly blazer è in anteprima e *non* è supportato in ASP.NET Core 3,0. Il webassembly Blazer sarà supportato in una versione futura di ASP.NET Core.
+Le app Blazor possono anche essere eseguite direttamente nel browser usando un Runtime .NET basato su webassembly. Il webassembly Blazor è in anteprima e *non* è supportato in ASP.NET Core 3,0. Il webassembly Blazor sarà supportato in una versione futura di ASP.NET Core.
 
 ### <a name="razor-components"></a>Componenti Razor
 
-Le app blazer sono compilate da componenti. I componenti sono blocchi autonomi dell'interfaccia utente (UI), ad esempio una pagina, una finestra di dialogo o un form. I componenti sono classi .NET normali che definiscono la logica di rendering dell'interfaccia utente e i gestori eventi sul lato client. È possibile creare app Web interattive avanzate senza JavaScript.
+Le app Blazor sono compilate da componenti. I componenti sono blocchi autonomi dell'interfaccia utente (UI), ad esempio una pagina, una finestra di dialogo o un form. I componenti sono classi .NET normali che definiscono la logica di rendering dell'interfaccia utente e i gestori eventi sul lato client. È possibile creare app Web interattive avanzate senza JavaScript.
 
-I componenti in blazer vengono in genere creati usando sintassi Razor, una combinazione naturale di HTML C#e. I componenti Razor sono simili alle visualizzazioni Razor Pages e MVC in quanto entrambi utilizzano Razor. Diversamente dalle pagine e dalle viste, basate su un modello di richiesta-risposta, i componenti vengono usati in modo specifico per la gestione della composizione dell'interfaccia utente.
+I componenti in Blazor vengono in genere creati usando sintassi Razor, una combinazione naturale di HTML C#e. I componenti Razor sono simili alle visualizzazioni Razor Pages e MVC in quanto entrambi utilizzano Razor. Diversamente dalle pagine e dalle viste, basate su un modello di richiesta-risposta, i componenti vengono usati in modo specifico per la gestione della composizione dell'interfaccia utente.
 
 ## <a name="grpc"></a>gRPC
 

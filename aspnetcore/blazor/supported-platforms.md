@@ -1,7 +1,7 @@
 ---
-title: Piattaforme supportate da ASP.NET Core Blazer
+title: Piattaforme supportate da ASP.NET Core Blazor
 author: guardrex
-description: Informazioni sulle piattaforme supportate per ASP.NET Core blazer.
+description: Informazioni sulle piattaforme supportate per ASP.NET Core blazor.
 monikerRange: '>= aspnetcore-3.0'
 ms.author: riande
 ms.custom: mvc
@@ -14,7 +14,7 @@ ms.contentlocale: it-IT
 ms.lasthandoff: 09/24/2019
 ms.locfileid: "71211576"
 ---
-# <a name="aspnet-core-blazor-supported-platforms"></a>Piattaforme supportate da ASP.NET Core Blazer
+# <a name="aspnet-core-blazor-supported-platforms"></a>Piattaforme supportate da ASP.NET Core Blazor
 
 Di [Luke Latham](https://github.com/guardrex)
 

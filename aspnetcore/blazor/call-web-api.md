@@ -1,7 +1,7 @@
 ---
-title: Chiamare un'API Web da ASP.NET Core Blazer
+title: Chiamare un'API Web da ASP.NET Core Blazor
 author: guardrex
-description: Informazioni su come chiamare un'API Web da un'app Blazer usando Helper JSON, inclusa la creazione di richieste di condivisione di risorse tra le origini (CORS).
+description: Informazioni su come chiamare un'API Web da un'app Blazor usando Helper JSON, inclusa la creazione di richieste di condivisione di risorse tra le origini (CORS).
 monikerRange: '>= aspnetcore-3.0'
 ms.author: riande
 ms.custom: mvc
@@ -14,26 +14,26 @@ ms.contentlocale: it-IT
 ms.lasthandoff: 10/05/2019
 ms.locfileid: "71975645"
 ---
-# <a name="call-a-web-api-from-aspnet-core-blazor"></a>Chiamare un'API Web da ASP.NET Core Blazer
+# <a name="call-a-web-api-from-aspnet-core-blazor"></a>Chiamare un'API Web da ASP.NET Core Blazor
 
 Di [Luke Latham](https://github.com/guardrex), [Daniel Roth](https://github.com/danroth27)e [Juan de la Cruz](https://github.com/juandelacruz23)
 
 [!INCLUDE[](~/includes/blazorwasm-preview-notice.md)]
 
-Le app webassembly Blazer chiamano API Web usando un servizio `HttpClient` preconfigurato. Comporre richieste, che possono includere opzioni [API di recupero](https://developer.mozilla.org/docs/Web/API/Fetch_API) JavaScript, usando Helper JSON di blazer o con <xref:System.Net.Http.HttpRequestMessage>.
+Le app webassembly Blazor chiamano API Web usando un servizio `HttpClient` preconfigurato. Comporre richieste, che possono includere opzioni [API di recupero](https://developer.mozilla.org/docs/Web/API/Fetch_API) JavaScript, usando Helper JSON di Blazor o con <xref:System.Net.Http.HttpRequestMessage>.
 
-Le app del server Blazer chiamano API Web usando le istanze <xref:System.Net.Http.HttpClient> in genere create con <xref:System.Net.Http.IHttpClientFactory>. Per altre informazioni, vedere <xref:fundamentals/http-requests>.
+Le app del server Blazor chiamano API Web usando le istanze <xref:System.Net.Http.HttpClient> in genere create con <xref:System.Net.Http.IHttpClientFactory>. Per altre informazioni, vedere <xref:fundamentals/http-requests>.
 
 [Visualizzare o scaricare il codice di esempio](https://github.com/aspnet/AspNetCore.Docs/tree/master/aspnetcore/blazor/common/samples/) ([procedura per il download](xref:index#how-to-download-a-sample))
 
-Per esempi di webassembly blazer, vedere i componenti seguenti nell'app di esempio:
+Per esempi di webassembly Blazor, vedere i componenti seguenti nell'app di esempio:
 
 * Chiama API Web (*pages/CallWebAPI. Razor*)
 * Tester richieste HTTP (*Components/HTTPRequestTester. Razor*)
 
 ## <a name="httpclient-and-json-helpers"></a>Helper HttpClient e JSON
 
-Nelle app webassembly di Blazer, [HttpClient](xref:fundamentals/http-requests) è disponibile come servizio preconfigurato per l'esecuzione delle richieste al server di origine. Per usare gli helper JSON `HttpClient`, aggiungere un riferimento al pacchetto `Microsoft.AspNetCore.Blazor.HttpClient`. gli helper `HttpClient` e JSON vengono usati anche per chiamare endpoint dell'API Web di terze parti. `HttpClient` viene implementato usando l' [API fetch](https://developer.mozilla.org/docs/Web/API/Fetch_API) del browser ed è soggetto alle limitazioni, inclusa l'applicazione degli stessi criteri di origine.
+Nelle app webassembly di Blazor, [HttpClient](xref:fundamentals/http-requests) è disponibile come servizio preconfigurato per l'esecuzione delle richieste al server di origine. Per usare gli helper JSON `HttpClient`, aggiungere un riferimento al pacchetto `Microsoft.AspNetCore.Blazor.HttpClient`. gli helper `HttpClient` e JSON vengono usati anche per chiamare endpoint dell'API Web di terze parti. `HttpClient` viene implementato usando l' [API fetch](https://developer.mozilla.org/docs/Web/API/Fetch_API) del browser ed è soggetto alle limitazioni, inclusa l'applicazione degli stessi criteri di origine.
 
 L'indirizzo di base del client viene impostato sull'indirizzo del server di origine. Inserire un'istanza `HttpClient` usando la direttiva `@inject`:
 
@@ -153,7 +153,7 @@ Per consentire ad altri siti di effettuare richieste di condivisione risorse tra
 
 ## <a name="httpclient-and-httprequestmessage-with-fetch-api-request-options"></a>HttpClient e HttpRequestMessage con le opzioni di richiesta dell'API fetch
 
-Quando si esegue su webassembly in un'app webassembly blazer, usare [HttpClient](xref:fundamentals/http-requests) e <xref:System.Net.Http.HttpRequestMessage> per personalizzare le richieste. Ad esempio, è possibile specificare l'URI della richiesta, il metodo HTTP e tutte le intestazioni di richiesta desiderate.
+Quando si esegue su webassembly in un'app webassembly Blazor, usare [HttpClient](xref:fundamentals/http-requests) e <xref:System.Net.Http.HttpRequestMessage> per personalizzare le richieste. Ad esempio, è possibile specificare l'URI della richiesta, il metodo HTTP e tutte le intestazioni di richiesta desiderate.
 
 Specificare le opzioni di richiesta per l' [API di recupero](https://developer.mozilla.org/docs/Web/API/Fetch_API) JavaScript sottostante usando la proprietà `WebAssemblyHttpMessageHandler.FetchArgs` della richiesta. Come illustrato nell'esempio seguente, la proprietà `credentials` è impostata su uno dei valori seguenti:
 

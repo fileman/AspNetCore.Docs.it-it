@@ -59,7 +59,7 @@ Includere un componente in un altro componente usando una sintassi HTML.
 
 1. Aggiungere il componente `Counter` al componente `Index` dell'app aggiungendo un elemento `<Counter />` al componente `Index` (*Index.razor*).
 
-   Se si usa webassembly blazer per questa esperienza, un `SurveyPrompt` componente viene utilizzato `Index` dal componente. Sostituire l'elemento `<SurveyPrompt>` con un elemento `<Counter />`. Se si usa un'app del server blazer per questa esperienza, aggiungere l' `<Counter />` elemento `Index` al componente:
+   Se si usa webassembly Blazor per questa esperienza, un `SurveyPrompt` componente viene utilizzato `Index` dal componente. Sostituire l'elemento `<SurveyPrompt>` con un elemento `<Counter />`. Se si usa un'app del server Blazor per questa esperienza, aggiungere l' `<Counter />` elemento `Index` al componente:
 
    *Pages/Index.razor*:
 
@@ -99,7 +99,7 @@ La direttiva `@page` all'inizio del file *Counter.razor* specifica che il compon
 
 ## <a name="dependency-injection"></a>Inserimento di dipendenze
 
-Se si utilizza un'app del server blazer, `WeatherForecastService` il servizio viene registrato come [singleton](xref:fundamentals/dependency-injection#service-lifetimes) in `Startup.ConfigureServices`. Un'istanza del servizio è disponibile in tutte le app tramite l' [inserimento di dipendenze](xref:fundamentals/dependency-injection):
+Se si utilizza un'app del server Blazor, `WeatherForecastService` il servizio viene registrato come [singleton](xref:fundamentals/dependency-injection#service-lifetimes) in `Startup.ConfigureServices`. Un'istanza del servizio è disponibile in tutte le app tramite l' [inserimento di dipendenze](xref:fundamentals/dependency-injection):
 
 [!code-csharp[](build-your-first-blazor-app/samples_snapshot/3.x/Startup.cs?highlight=5)]
 
@@ -113,7 +113,7 @@ Il componente `FetchData` usa il servizio inserito, come `ForecastService`, per 
 
 [!code-cshtml[](build-your-first-blazor-app/samples_snapshot/3.x/FetchData2.razor?highlight=6)]
 
-Se si usa un'app webassembly blazer, `HttpClient` viene inserito per ottenere i dati delle previsioni meteo dal file *Weather. JSON* nella cartella *wwwroot/Sample-Data* .
+Se si usa un'app webassembly Blazor, `HttpClient` viene inserito per ottenere i dati delle previsioni meteo dal file *Weather. JSON* nella cartella *wwwroot/Sample-Data* .
 
 *Pages/FetchData.razor*:
 

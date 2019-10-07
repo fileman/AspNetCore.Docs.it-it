@@ -1,7 +1,7 @@
 ---
-title: Layout di ASP.NET Core Blazer
+title: Layout di ASP.NET Core Blazor
 author: guardrex
-description: Informazioni su come creare componenti di layout riutilizzabili per le app blazer.
+description: Informazioni su come creare componenti di layout riutilizzabili per le app Blazor.
 monikerRange: '>= aspnetcore-3.0'
 ms.author: riande
 ms.custom: mvc
@@ -14,7 +14,7 @@ ms.contentlocale: it-IT
 ms.lasthandoff: 09/24/2019
 ms.locfileid: "71211578"
 ---
-# <a name="aspnet-core-blazor-layouts"></a>Layout di ASP.NET Core Blazer
+# <a name="aspnet-core-blazor-layouts"></a>Layout di ASP.NET Core Blazor
 
 Di [Rainer Stropek](https://www.timecockpit.com) e [Luke Latham](https://github.com/guardrex)
 
@@ -31,11 +31,11 @@ Nell'esempio di codice seguente viene illustrato il modello Razor di un componen
 
 [!code-cshtml[](layouts/sample_snapshot/3.x/MainLayout.razor?highlight=1,13)]
 
-In un'app basata su uno dei modelli di app blazer, il `MainLayout` componente (*MainLayout. Razor*) si trova nella cartella *condivisa* dell'app.
+In un'app basata su uno dei modelli di app Blazor, il `MainLayout` componente (*MainLayout. Razor*) si trova nella cartella *condivisa* dell'app.
 
 ## <a name="default-layout"></a>Layout predefinito
 
-Specificare il layout predefinito dell'app nel `Router` componente nel file *app. Razor* dell'app. Il componente `Router` seguente, fornito dai modelli Blazer predefiniti, imposta il layout `MainLayout` predefinito sul componente:
+Specificare il layout predefinito dell'app nel `Router` componente nel file *app. Razor* dell'app. Il componente `Router` seguente, fornito dai modelli Blazor predefiniti, imposta il layout `MainLayout` predefinito sul componente:
 
 [!code-cshtml[](layouts/sample_snapshot/3.x/App1.razor?highlight=3)]
 

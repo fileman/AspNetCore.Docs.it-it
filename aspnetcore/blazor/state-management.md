@@ -1,7 +1,7 @@
 ---
-title: Gestione dello stato di ASP.NET Core Blazer
+title: Gestione dello stato di ASP.NET Core Blazor
 author: guardrex
-description: Informazioni su come salvare in modo permanente lo stato nelle app del server blazer.
+description: Informazioni su come salvare in modo permanente lo stato nelle app del server Blazor.
 monikerRange: '>= aspnetcore-3.0'
 ms.author: riande
 ms.custom: mvc
@@ -14,13 +14,13 @@ ms.contentlocale: it-IT
 ms.lasthandoff: 09/24/2019
 ms.locfileid: "71211630"
 ---
-# <a name="aspnet-core-blazor-state-management"></a>Gestione dello stato di ASP.NET Core Blazer
+# <a name="aspnet-core-blazor-state-management"></a>Gestione dello stato di ASP.NET Core Blazor
 
 Di [Steve Sanderson](https://github.com/SteveSandersonMS)
 
 [!INCLUDE[](~/includes/blazorwasm-preview-notice.md)]
 
-Il server blazer è un Framework di app con stato. Nella maggior parte dei casi, l'app mantiene una connessione continuativa al server. Lo stato dell'utente viene mantenuto nella memoria del server in un *circuito*. 
+Il server Blazor è un Framework di app con stato. Nella maggior parte dei casi, l'app mantiene una connessione continuativa al server. Lo stato dell'utente viene mantenuto nella memoria del server in un *circuito*. 
 
 Di seguito sono riportati alcuni esempi di stato utilizzati per il circuito di un utente:
 
@@ -29,11 +29,11 @@ Di seguito sono riportati alcuni esempi di stato utilizzati per il circuito di u
 * Dati contenuti nelle istanze del servizio [di inserimento delle dipendenze](xref:fundamentals/dependency-injection) che hanno come ambito il circuito.
 
 > [!NOTE]
-> Questo articolo illustra la persistenza dello stato nelle app del server blazer. Le app webassembly Blazer possono sfruttare [la persistenza dello stato sul lato client nel browser](#client-side-in-the-browser) , ma richiedono soluzioni personalizzate o pacchetti di terze parti oltre l'ambito di questo articolo.
+> Questo articolo illustra la persistenza dello stato nelle app del server Blazor. Le app webassembly Blazor possono sfruttare [la persistenza dello stato sul lato client nel browser](#client-side-in-the-browser) , ma richiedono soluzioni personalizzate o pacchetti di terze parti oltre l'ambito di questo articolo.
 
-## <a name="blazor-circuits"></a>Circuiti Blazer
+## <a name="blazor-circuits"></a>Circuiti Blazor
 
-Se un utente si verifica una perdita di connessione di rete temporanea, blazer tenta di riconnettere l'utente al circuito originale per poter continuare a usare l'app. Tuttavia, la riconnessione di un utente al circuito originale nella memoria del server non è sempre possibile:
+Se un utente si verifica una perdita di connessione di rete temporanea, Blazor tenta di riconnettere l'utente al circuito originale per poter continuare a usare l'app. Tuttavia, la riconnessione di un utente al circuito originale nella memoria del server non è sempre possibile:
 
 * Il server non è in grado di mantenere sempre un circuito disconnesso. Il server deve rilasciare un circuito disconnesso dopo un timeout o quando il server è sottoposto a un numero eccessivo di richieste di memoria.
 * Negli ambienti di distribuzione con bilanciamento del carico multiserver tutte le richieste di elaborazione del server potrebbero non essere più disponibili in un determinato momento. I singoli server possono avere esito negativo o essere rimossi automaticamente quando non sono più necessari per gestire il volume complessivo delle richieste. Il server originale potrebbe non essere disponibile quando l'utente tenta di riconnettersi.
@@ -64,7 +64,7 @@ In genere non è necessario mantenere lo stato facilmente ricreato, ad esempio i
 
 ## <a name="where-to-persist-state"></a>Posizione in cui salvare lo stato
 
-Sono disponibili tre posizioni comuni per lo stato permanente in un'app Server blazer. Ogni approccio è più adatto a scenari diversi e presenta diverse avvertenze:
+Sono disponibili tre posizioni comuni per lo stato permanente in un'app Server Blazor. Ogni approccio è più adatto a scenari diversi e presenta diverse avvertenze:
 
 * [Lato server in un database](#server-side-in-a-database)
 * [URL](#url)
@@ -102,7 +102,7 @@ Per informazioni sulla definizione di modelli URL con `@page` la direttiva, <xre
 Per i dati temporanei che l'utente sta creando attivamente, un archivio di `localStorage` backup comune è costituito dalle raccolte e `sessionStorage` del browser. L'app non è necessaria per gestire o cancellare lo stato archiviato se il circuito viene abbandonato, il che rappresenta un vantaggio rispetto all'archiviazione sul lato server.
 
 > [!NOTE]
-> "Lato client" in questa sezione si riferisce agli scenari lato client nel browser, non al [modello di hosting Webassembly Blazer](xref:blazor/hosting-models#blazor-webassembly). `localStorage`e `sessionStorage` possono essere usati nelle app webassembly blazer, ma solo scrivendo codice personalizzato o usando un pacchetto di terze parti.
+> "Lato client" in questa sezione si riferisce agli scenari lato client nel browser, non al [modello di hosting Webassembly Blazor](xref:blazor/hosting-models#blazor-webassembly). `localStorage`e `sessionStorage` possono essere usati nelle app webassembly Blazor, ma solo scrivendo codice personalizzato o usando un pacchetto di terze parti.
 
 `localStorage`e `sessionStorage` si differenziano nel modo seguente:
 
@@ -120,7 +120,7 @@ Avvertenze per l'uso dell'archiviazione del browser:
 
 * Analogamente all'utilizzo di un database lato server, il caricamento e il salvataggio dei dati sono asincroni.
 * A differenza di un database lato server, l'archiviazione non è disponibile durante il prerendering perché la pagina richiesta non esiste nel browser durante la fase di pre-rendering.
-* L'archiviazione di alcuni kilobyte di dati è ragionevole per essere resa permanente per le app del server blazer. Oltre alcuni kilobyte, è necessario considerare le implicazioni relative alle prestazioni perché i dati vengono caricati e salvati in rete.
+* L'archiviazione di alcuni kilobyte di dati è ragionevole per essere resa permanente per le app del server Blazor. Oltre alcuni kilobyte, è necessario considerare le implicazioni relative alle prestazioni perché i dati vengono caricati e salvati in rete.
 * Gli utenti possono visualizzare o manomettere i dati. ASP.NET Core [protezione dei dati](xref:security/data-protection/introduction) può ridurre il rischio.
 
 ## <a name="third-party-browser-storage-solutions"></a>Soluzioni di archiviazione del browser di terze parti
@@ -140,7 +140,7 @@ Un esempio di pacchetto NuGet che fornisce la [protezione dei dati](xref:securit
 
 Per installare il `Microsoft.AspNetCore.ProtectedBrowserStorage` pacchetto:
 
-1. Nel progetto di app del server Blazer aggiungere un riferimento al pacchetto a [Microsoft. AspNetCore. ProtectedBrowserStorage](https://www.nuget.org/packages/Microsoft.AspNetCore.ProtectedBrowserStorage).
+1. Nel progetto di app del server Blazor aggiungere un riferimento al pacchetto a [Microsoft. AspNetCore. ProtectedBrowserStorage](https://www.nuget.org/packages/Microsoft.AspNetCore.ProtectedBrowserStorage).
 1. Nel codice HTML di primo livello (ad esempio, nel file *pages/_Host. cshtml* nel modello di progetto predefinito) aggiungere il tag seguente `<script>` :
 
    ```html

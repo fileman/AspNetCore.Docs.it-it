@@ -1,7 +1,7 @@
 ---
 title: Librerie di classi dei componenti di ASP.NET Core Razor
 author: guardrex
-description: Scopri in che modo i componenti possono essere inclusi nelle app blazer da una libreria di componenti esterna.
+description: Scopri in che modo i componenti possono essere inclusi nelle app Blazor da una libreria di componenti esterna.
 monikerRange: '>= aspnetcore-3.0'
 ms.author: riande
 ms.custom: mvc
@@ -28,7 +28,7 @@ Così come i componenti sono tipi .NET normali, i componenti forniti da un RCL s
 
 ## <a name="create-an-rcl"></a>Creare un RCL
 
-Per configurare l'ambiente per <xref:blazor/get-started> blazer, seguire le istruzioni riportate nell'articolo.
+Per configurare l'ambiente per <xref:blazor/get-started> Blazor, seguire le istruzioni riportate nell'articolo.
 
 # <a name="visual-studiotabvisual-studio"></a>[Visual Studio](#tab/visual-studio)
 

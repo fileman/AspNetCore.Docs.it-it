@@ -42,24 +42,24 @@ dotnet publish -c Release
 
 La pubblicazione dell'app attiva un [ripristino](/dotnet/core/tools/dotnet-restore) delle dipendenze del progetto e [compila](/dotnet/core/tools/dotnet-build) il progetto prima di creare gli asset per la distribuzione. Come parte del processo di compilazione, vengono rimossi gli assembly e i metodi non usati per ridurre le dimensioni del download e i tempi di caricamento dell'app.
 
-Un'app webassembly Blazer viene pubblicata nella cartella */bin/Release/{Target Framework}/Publish/{assembly nome}/dist* . Viene pubblicata un'app del server Blazer nella cartella */bin/Release/{Target Framework}/Publish*
+Un'app webassembly Blazor viene pubblicata nella cartella */bin/Release/{Target Framework}/Publish/{assembly nome}/dist* . Viene pubblicata un'app del server Blazor nella cartella */bin/Release/{Target Framework}/Publish*
 
 Gli asset nella cartella vengono distribuiti nel server Web. La distribuzione potrebbe essere un processo manuale o automatizzato a seconda degli strumenti di sviluppo in uso.
 
 ## <a name="app-base-path"></a>Percorso di base dell'app
 
-Il *percorso di base dell'app* è il percorso dell'URL radice dell'app. Si consideri l'app principale e l'app Blazer seguenti:
+Il *percorso di base dell'app* è il percorso dell'URL radice dell'app. Si consideri l'app principale e l'app Blazor seguenti:
 
 * Viene chiamata `MyApp`l'app principale:
   * L'app risiede fisicamente in *\\d: MyApp*.
   * Le richieste vengono ricevute all'indirizzo `https://www.contoso.com/{MYAPP RESOURCE}`.
-* Un'app Blazer chiamata `CoolApp` è una sottoapp di: `MyApp`
+* Un'app Blazor chiamata `CoolApp` è una sottoapp di: `MyApp`
   * La Sub-App risiede fisicamente in *d:\\MyApp\\CoolApp*.
   * Le richieste vengono ricevute all'indirizzo `https://www.contoso.com/CoolApp/{COOLAPP RESOURCE}`.
 
 Se non si specifica una `CoolApp`configurazione aggiuntiva per, la sottoapp in questo scenario non è a conoscenza della posizione in cui risiede nel server. Ad esempio, l'app non può costruire URL relativi corretti per le risorse senza sapere che risiede nel percorso `/CoolApp/`URL relativo.
 
-Per fornire la configurazione per il percorso di base `https://www.contoso.com/CoolApp/`dell'app blazer di `<base>` , l' `href` attributo del tag viene impostato sul percorso radice relativo nel file *wwwroot/index.html* :
+Per fornire la configurazione per il percorso di base `https://www.contoso.com/CoolApp/`dell'app Blazor di `<base>` , l' `href` attributo del tag viene impostato sul percorso radice relativo nel file *wwwroot/index.html* :
 
 ```html
 <base href="/CoolApp/">
@@ -67,7 +67,7 @@ Per fornire la configurazione per il percorso di base `https://www.contoso.com/C
 
 Fornendo il percorso URL relativo, un componente che non si trova nella directory radice può costruire URL relativi al percorso radice dell'app. I componenti a livelli diversi della struttura di directory possono creare collegamenti ad altre risorse in posizioni all'interno dell'app. Il percorso di base dell'app viene anche usato per intercettare i clic su collegamenti ipertestuali in cui la destinazione del collegamento `href` si trova all'interno dello spazio URI del percorso di base dell'app. Il router Blazor gestisce la navigazione interna.
 
-In molti scenari di hosting il percorso URL relativo dell'app è la radice dell'app. In questi casi, il percorso di base dell'URL relativo dell'app è una barra`<base href="/" />`(), ovvero la configurazione predefinita per un'app blazer. In altri scenari di hosting, ad esempio pagine di GitHub e sottoapp di IIS, il percorso di base dell'app deve essere impostato sul percorso URL relativo del server per l'app.
+In molti scenari di hosting il percorso URL relativo dell'app è la radice dell'app. In questi casi, il percorso di base dell'URL relativo dell'app è una barra`<base href="/" />`(), ovvero la configurazione predefinita per un'app Blazor. In altri scenari di hosting, ad esempio pagine di GitHub e sottoapp di IIS, il percorso di base dell'app deve essere impostato sul percorso URL relativo del server per l'app.
 
 Per impostare il percorso di base dell'app, aggiornare il tag `<base>` all'interno degli elementi del tag `<head>` del file*wwwroot/index.html*. Impostare il `href` valore dell'attributo `/{RELATIVE URL PATH}/` su (la barra finale è obbligatoria), dove `{RELATIVE URL PATH}` è il percorso URL relativo completo dell'app.
 
